@@ -14722,7 +14722,7 @@ Problem 4: </li>
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>'BRCA_IDC_cfDNA.bam'</li><li>'BRCA_IDC_cfDNA.bam.bai'</li><li>'BRCA.genome_wide_snp_6_broad_Level_3_scna.seg'</li><li>'GIAB_highconf_v.3.3.2.vcf.gz'</li><li>'GIAB_highconf_v.3.3.2.vcf.gz.tbi'</li><li>'Homework07.ipynb'</li><li>'homework07.Rmd'</li><li>'hs37d5.fa'</li><li>'README.md'</li></ol>
+<ol class=list-inline><li>'BRCA_IDC_cfDNA.bam'</li><li>'BRCA_IDC_cfDNA.bam.bai'</li><li>'BRCA.genome_wide_snp_6_broad_Level_3_scna.seg'</li><li>'GIAB_highconf_v.3.3.2.vcf.gz'</li><li>'GIAB_highconf_v.3.3.2.vcf.gz.tbi'</li><li>'Homework07.html'</li><li>'Homework07.ipynb'</li><li>'homework07.Rmd'</li><li>'hs37d5.fa'</li><li>'hs37d5.fa.gz.fai'</li><li>'igv_snapshot1.png'</li><li>'igv_snapshot2.png'</li><li>'README.md'</li></ol>
 
 </div>
 
@@ -14771,7 +14771,7 @@ Problem 4: </li>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="c1">#myRange variable for GRanges with sequence location of interest</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#myRange variable for GRanges region chr8:128,746,347-128,755,810</span>
 <span class="n">myGRange</span> <span class="o">&lt;-</span> <span class="nf">GRanges</span><span class="p">(</span><span class="n">seqnames</span> <span class="o">=</span> <span class="s">&quot;8&quot;</span><span class="p">,</span> <span class="n">ranges</span> <span class="o">=</span> <span class="nf">IRanges</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="m">128746347</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="m">128755810</span><span class="p">))</span>
 <span class="c1">#overlap of sequences with the Grange and convert to dataframe</span>
 <span class="n">segs.overlap</span> <span class="o">&lt;-</span> <span class="nf">find_overlaps</span><span class="p">(</span><span class="n">segs.gr</span><span class="p">,</span> <span class="n">myGRange</span><span class="p">)</span> <span class="o">%&gt;%</span>
@@ -14829,7 +14829,7 @@ Problem 4: </li>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="c1">#myRange variable for GRanges with sequence location of interest, new variable name</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#myRange variable for GRanges with chr17:37,842,337-37,886,915, new variable name</span>
 <span class="n">myGRange_1b</span> <span class="o">&lt;-</span> <span class="nf">GRanges</span><span class="p">(</span><span class="n">seqnames</span> <span class="o">=</span> <span class="s">&quot;17&quot;</span><span class="p">,</span> <span class="n">ranges</span> <span class="o">=</span> <span class="nf">IRanges</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="m">37842337</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="m">37886915</span><span class="p">))</span>
 <span class="c1">#overlap of sequences with the Grange and convert to dataframe</span>
 <span class="n">segs.overlap_1b</span> <span class="o">&lt;-</span> <span class="nf">find_overlaps</span><span class="p">(</span><span class="n">segs.gr</span><span class="p">,</span> <span class="n">myGRange_1b</span><span class="p">)</span> <span class="o">%&gt;%</span>
@@ -14898,7 +14898,7 @@ Problem 4: </li>
     <span class="nf">filter</span><span class="p">(</span><span class="n">Segment_Mean</span> <span class="o">&lt;</span> <span class="m">-0.3</span><span class="p">)</span>
 <span class="c1">#count samples with deletions by counting the rows</span>
 <span class="n">del</span> <span class="o">&lt;-</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">deletion_seqs</span><span class="p">)</span>
-<span class="nf">sprintf</span><span class="p">(</span><span class="s">&#39;The counts of samples with deletion segments is %s.&#39;</span><span class="p">,</span> <span class="n">del</span><span class="p">)</span> <span class="c1">#sprintf function</span>
+<span class="nf">sprintf</span><span class="p">(</span><span class="s">&#39;The counts of samples with deletion segments is %s.&#39;</span><span class="p">,</span> <span class="n">del</span><span class="p">)</span> <span class="c1">#sprintf function like f string in python</span>
 
 <span class="c1">#filter segs.overlap_PIK3CA for Segment_mean between -0.3 and 0.3 for neutral segs</span>
 <span class="n">neutral_seqs</span> <span class="o">&lt;-</span> <span class="n">segs.overlap_PIK3CA</span> <span class="o">%&gt;%</span>
@@ -14907,7 +14907,7 @@ Problem 4: </li>
 <span class="n">neutral</span> <span class="o">&lt;-</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">neutral_seqs</span><span class="p">)</span>
 <span class="nf">sprintf</span><span class="p">(</span><span class="s">&#39;The counts of samples with neutral segments is %s.&#39;</span><span class="p">,</span> <span class="n">neutral</span><span class="p">)</span>
 
-<span class="c1">#filter segs.overlap_PIK3CA for Segment_mean greater than 0.3 for gain segs</span>
+<span class="c1">#filter segs.overlap_PIK3CA for Segment_mean greater than 0.3 to find gain segments</span>
 <span class="n">gain_seqs</span> <span class="o">&lt;-</span> <span class="n">segs.overlap_PIK3CA</span> <span class="o">%&gt;%</span>
     <span class="nf">filter</span><span class="p">(</span><span class="n">Segment_Mean</span> <span class="o">&gt;</span> <span class="m">0.3</span><span class="p">)</span>
 <span class="c1">#count samples with deletions by counting the rows</span>
@@ -14993,14 +14993,15 @@ Problem 4: </li>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#read in the reference genome</span>
 <span class="n">seqinfo</span> <span class="o">&lt;-</span> <span class="nf">Seqinfo</span><span class="p">(</span><span class="n">genome</span> <span class="o">=</span> <span class="s">&quot;hg19&quot;</span><span class="p">)</span>
-<span class="c1">#to keep standard chromosomes</span>
+<span class="c1">#keep standard chromosomes</span>
 <span class="n">seqinfo</span> <span class="o">&lt;-</span> <span class="nf">keepStandardChromosomes</span><span class="p">(</span><span class="n">seqinfo</span><span class="p">)</span> 
 <span class="c1">#use NCBI chromosome naming convention by setting seqlevelsStyle</span>
 <span class="nf">seqlevelsStyle</span><span class="p">(</span><span class="n">seqinfo</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="s">&quot;NCBI&quot;</span>
-<span class="n">slen</span> <span class="o">&lt;-</span> <span class="nf">seqlengths</span><span class="p">(</span><span class="n">seqinfo</span><span class="p">)</span> <span class="c1">#get the length of the chrs</span>
+<span class="n">slen</span> <span class="o">&lt;-</span> <span class="nf">seqlengths</span><span class="p">(</span><span class="n">seqinfo</span><span class="p">)</span> <span class="c1">#get the length of the chromosomes</span>
 <span class="n">tileWidth</span> <span class="o">&lt;-</span> <span class="m">1000000</span> <span class="c1">#tile size of 1Mb</span>
 <span class="c1">#make the tiles</span>
-<span class="n">tiles</span> <span class="o">&lt;-</span> <span class="nf">tileGenome</span><span class="p">(</span><span class="n">seqlengths</span> <span class="o">=</span> <span class="n">slen</span><span class="p">,</span> <span class="n">tilewidth</span> <span class="o">=</span> <span class="n">tileWidth</span><span class="p">,</span> <span class="n">cut.last.tile.in.chrom</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">tiles</span> <span class="o">&lt;-</span> <span class="nf">tileGenome</span><span class="p">(</span><span class="n">seqlengths</span> <span class="o">=</span> <span class="n">slen</span><span class="p">,</span> <span class="n">tilewidth</span> <span class="o">=</span> <span class="n">tileWidth</span><span class="p">,</span>
+                    <span class="n">cut.last.tile.in.chrom</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15054,19 +15055,20 @@ Problem 4: </li>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="c1">#filter segs.gr to only deletions Segment_Mean &lt; -0.3 </span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#filter segs.gr to only deletions so less than -0.3 Segment_Mean</span>
 <span class="n">segs.grdel</span><span class="o">&lt;-</span> <span class="n">segs.gr</span> <span class="o">%&gt;%</span>
   <span class="nf">filter</span><span class="p">(</span><span class="n">Segment_Mean</span> <span class="o">&lt;</span> <span class="m">-0.3</span><span class="p">)</span>
 
-<span class="c1">#overlap of the 1Mb tiles, convert to dataframe</span>
+<span class="c1">#find overlap of the 1Mb tiles with the sequence segs</span>
 <span class="n">segs.overlap_del</span> <span class="o">&lt;-</span> <span class="nf">find_overlaps</span><span class="p">(</span><span class="n">tiles</span><span class="p">,</span> <span class="n">segs.grdel</span><span class="p">)</span> <span class="o">%&gt;%</span>
-  <span class="nf">as.data.frame</span><span class="p">()</span>
+  <span class="nf">as.data.frame</span><span class="p">()</span> <span class="c1">#convert to dataframe</span>
 
-<span class="c1">#group overlap df by seq(chromosome), start, and end</span>
+<span class="c1">#group the find overlap dataframe by seq(chromosome), start, and end and </span>
 <span class="n">max_count</span> <span class="o">&lt;-</span> <span class="n">segs.overlap_del</span> <span class="o">%&gt;%</span> 
   <span class="nf">group_by</span><span class="p">(</span><span class="n">seqnames</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="o">%&gt;%</span>
-  <span class="nf">summarise</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="nf">n</span><span class="p">())</span>  <span class="c1">#summarise to find the count or frequency for each tile</span>
-<span class="c1">#filter tiles with max number of counts/deletion segs</span>
+  <span class="nf">summarise</span><span class="p">(</span><span class="n">counts</span> <span class="o">=</span> <span class="nf">n</span><span class="p">())</span> <span class="c1">#summarise to find the frequency counts for each tile</span>
+
+<span class="c1">#filter for tiles with the max number of counts/deletion segments</span>
 <span class="n">max_count</span> <span class="o">%&gt;%</span> <span class="nf">filter </span><span class="p">(</span><span class="n">counts</span> <span class="o">==</span> <span class="nf">max</span><span class="p">(</span><span class="n">max_count</span><span class="o">$</span><span class="n">counts</span><span class="p">))</span>
 </pre></div>
 
@@ -15146,12 +15148,12 @@ the `.groups` argument.
 <div class=" highlight hl-r"><pre><span></span><span class="c1">#save screenshot and load into R with png package (see: https://stackoverflow.com/questions/23861000/displaying-images-in-r-in-version-3-1-0)</span>
 <span class="c1">#load png package</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">png</span><span class="p">)</span>
-<span class="c1">#load in screenshot from igv of chr16:79,000,001-80,000,000 from dataframe above</span>
+<span class="c1">#load in screenshot from igv chr16:79,000,001-80,000,000 from df above</span>
 <span class="n">pp</span> <span class="o">&lt;-</span> <span class="nf">readPNG</span><span class="p">(</span><span class="s">&quot;igv_snapshot1.png&quot;</span><span class="p">)</span>
 <span class="nf">plot.new</span><span class="p">()</span> 
 <span class="nf">rasterImage</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
 
-<span class="c1">#load in screenshot from igv chr16:83,000,001-84,000,000</span>
+<span class="c1">#load in screenshot from igv chr16:83,000,001-84,000,000 from df above</span>
 <span class="n">pp2</span> <span class="o">&lt;-</span> <span class="nf">readPNG</span><span class="p">(</span><span class="s">&quot;igv_snapshot2.png&quot;</span><span class="p">)</span>
 <span class="nf">plot.new</span><span class="p">()</span> 
 <span class="nf">rasterImage</span><span class="p">(</span><span class="n">pp2</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
@@ -15258,14 +15260,13 @@ class="
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="c1">#header information</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#scan for reading header in VCF</span>
 <span class="n">vcfHead</span> <span class="o">&lt;-</span> <span class="nf">scanVcfHeader</span><span class="p">(</span><span class="n">vcfFile</span><span class="p">)</span>
-<span class="c1">#overlap of sequences with the Grange and convert to dataframe</span>
+<span class="c1">#make new GRanges with chr8:128,700,000-129,000,000 region</span>
 <span class="n">myGRange_vcf</span> <span class="o">&lt;-</span> <span class="nf">GRanges</span><span class="p">(</span><span class="n">seqnames</span> <span class="o">=</span> <span class="s">&quot;8&quot;</span><span class="p">,</span> <span class="n">ranges</span> <span class="o">=</span> <span class="nf">IRanges</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="m">128700000</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="m">129000000</span><span class="p">))</span>
 <span class="n">vcf.param</span> <span class="o">&lt;-</span> <span class="nf">ScanVcfParam</span><span class="p">(</span><span class="n">which</span> <span class="o">=</span> <span class="n">myGRange_vcf</span><span class="p">)</span> 
 <span class="c1">#read VCF files</span>
 <span class="n">vcf</span> <span class="o">&lt;-</span> <span class="nf">readVcf</span><span class="p">(</span><span class="n">vcfFile</span><span class="p">,</span> <span class="n">genome</span> <span class="o">=</span> <span class="s">&quot;hg19&quot;</span><span class="p">,</span> <span class="n">param</span> <span class="o">=</span> <span class="n">vcf.param</span><span class="p">)</span>
-<span class="c1">#print(vcf)</span>
 </pre></div>
 
      </div>
@@ -15293,10 +15294,10 @@ class="
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="c1">#combine all fields into a single table</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#combine all `geno` fields into a single table</span>
 <span class="n">genoData</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="nf">do.call</span><span class="p">(</span><span class="n">cbind</span><span class="p">,</span> <span class="nf">geno</span><span class="p">(</span><span class="n">vcf</span><span class="p">)))</span>
 <span class="nf">colnames</span><span class="p">(</span><span class="n">genoData</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">rownames</span><span class="p">(</span><span class="nf">geno</span><span class="p">(</span><span class="nf">header</span><span class="p">(</span><span class="n">vcf</span><span class="p">)))</span>
-<span class="c1">#display dataframe</span>
+<span class="c1">#show dataframe</span>
 <span class="n">genoData</span>
 </pre></div>
 
@@ -15424,7 +15425,7 @@ class="
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-r"><pre><span></span><span class="c1">#myRange variable for GRanges at chr8:128747953</span>
+<div class=" highlight hl-r"><pre><span></span><span class="c1">#make new GRanges at chr8:128747953</span>
 <span class="n">myGRange_chr8</span> <span class="o">&lt;-</span> <span class="nf">GRanges</span><span class="p">(</span><span class="n">seqnames</span> <span class="o">=</span> <span class="s">&#39;8&#39;</span><span class="p">,</span> <span class="n">ranges</span> <span class="o">=</span> <span class="nf">IRanges</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="m">128747953</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="m">128747953</span><span class="p">))</span>
 <span class="c1">#vcf parameters</span>
 <span class="n">vcf.param_chr8</span> <span class="o">&lt;-</span> <span class="nf">ScanVcfParam</span><span class="p">(</span><span class="n">which</span> <span class="o">=</span> <span class="n">myGRange_chr8</span><span class="p">)</span>
@@ -15434,11 +15435,11 @@ class="
 <span class="c1">#combine all `geno` fields into a single table</span>
 <span class="n">genoData_chr8</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="nf">do.call</span><span class="p">(</span><span class="n">cbind</span><span class="p">,</span> <span class="nf">geno</span><span class="p">(</span><span class="n">vcf_chr8</span><span class="p">)))</span>
 <span class="nf">colnames</span><span class="p">(</span><span class="n">genoData_chr8</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">rownames</span><span class="p">(</span><span class="nf">geno</span><span class="p">(</span><span class="nf">header</span><span class="p">(</span><span class="n">vcf_chr8</span><span class="p">)))</span>
-<span class="c1">#select GT, DP, ADALL, PS cols</span>
+<span class="c1">#select GT, DP, ADALL, PS columns</span>
 <span class="n">genoData_chr8</span> <span class="o">&lt;-</span> <span class="nf">subset </span><span class="p">(</span><span class="n">genoData_chr8</span><span class="p">,</span> <span class="n">select</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">GT</span><span class="p">,</span> <span class="n">DP</span><span class="p">,</span> <span class="n">ADALL</span><span class="p">,</span> <span class="n">PS</span><span class="p">))</span>
-<span class="c1">#convert rownames to a column of the dataframe</span>
+<span class="c1">#convert rownames to a column of the df</span>
 <span class="n">genoData_chr8</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">SNP_ID</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">genoData_chr8</span><span class="p">),</span> <span class="n">genoData_chr8</span><span class="p">)</span>
-<span class="c1">#remove original rownames</span>
+<span class="c1">#remove the original rownames</span>
 <span class="nf">rownames</span><span class="p">(</span><span class="n">genoData_chr8</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
 
 <span class="c1">#get REF and ALT columns using rowRanges and convert to dataframe</span>
@@ -15446,18 +15447,18 @@ class="
     <span class="nf">as.data.frame</span><span class="p">()</span>
 <span class="c1">#select REF and ALT columns</span>
 <span class="n">newcols</span> <span class="o">&lt;-</span> <span class="nf">subset </span><span class="p">(</span><span class="n">newcols</span><span class="p">,</span> <span class="n">select</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="n">REF</span><span class="p">,</span> <span class="n">ALT</span><span class="p">))</span>
-<span class="c1">#convert rownames to a column of the dataframe</span>
+<span class="c1">#convert rownames to a column of the df</span>
 <span class="n">newcols</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">SNP_ID</span> <span class="o">=</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">newcols</span><span class="p">),</span> <span class="n">newcols</span><span class="p">)</span>
-<span class="c1">#remove original rownames</span>
+<span class="c1">#remove the original rownames</span>
 <span class="nf">rownames</span><span class="p">(</span><span class="n">newcols</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="kc">NULL</span>
 
-<span class="c1">#merge the dataframes with REF and ALT columns together</span>
-<span class="n">SNP_chr8</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">newcols</span><span class="p">,</span> <span class="n">genoData_chr8</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s">&#39;SNP_ID&#39;</span><span class="p">)</span>
+<span class="c1">#merge the two dataframes with REF and ALT columns together</span>
+<span class="n">SNPs_chr8</span> <span class="o">&lt;-</span> <span class="nf">merge</span><span class="p">(</span><span class="n">newcols</span><span class="p">,</span> <span class="n">genoData_chr8</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s">&#39;SNP_ID&#39;</span><span class="p">)</span>
 <span class="c1">#rename SNP ID column</span>
-<span class="n">SNP_chr8</span> <span class="o">&lt;-</span> <span class="n">SNP_chr8</span> <span class="o">%&gt;%</span> 
+<span class="n">SNPs_chr8</span>  <span class="o">&lt;-</span> <span class="n">SNPs_chr8</span>  <span class="o">%&gt;%</span> 
        <span class="nf">rename</span><span class="p">(</span><span class="s">&quot;SNP_ID&quot;</span> <span class="o">=</span> <span class="s">&quot;SNP ID&quot;</span><span class="p">)</span>
 <span class="c1">#show dataframe</span>
-<span class="n">SNP_chr8</span>
+<span class="n">SNPs_chr8</span>
 </pre></div>
 
      </div>
